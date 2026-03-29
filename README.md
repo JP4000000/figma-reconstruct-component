@@ -33,9 +33,41 @@ Along the way it:
 
 ## Prerequisites
 
-- [Claude](https://claude.ai) with the **Figma MCP server connected**
 - A Figma file open with at least one frame selected
-- Node.js (if running any local tooling)
+- The **Figma MCP server** connected to Claude (see below)
+- A Figma personal access token — get one from **Figma → Account Settings → Personal Access Tokens**
+
+> This skill uses the **Figma MCP server**, not a Figma plugin. Claude reads and writes directly to your Figma file through the MCP connection — no plugin panel or Figma Community install required.
+
+---
+
+## Connecting the Figma MCP Server
+
+### Using Claude.ai (browser)
+
+1. Go to **Claude.ai → Settings → Integrations**
+2. Find Figma and click **Connect**
+3. Authorize with your Figma account
+4. The Figma MCP server will be available in all your Claude conversations
+
+### Using Claude Code (terminal)
+
+Add the Figma MCP server to your Claude config file (`~/.claude.json` or `claude_desktop_config.json`):
+
+```json
+{
+  "mcpServers": {
+    "figma": {
+      "url": "https://mcp.figma.com/mcp",
+      "headers": {
+        "Authorization": "Bearer YOUR_FIGMA_ACCESS_TOKEN"
+      }
+    }
+  }
+}
+```
+
+Replace `YOUR_FIGMA_ACCESS_TOKEN` with your personal access token. Store it in `.component-contracts` (gitignored) and reference it from there — never hardcode it in the config directly.
 
 ---
 
@@ -48,23 +80,15 @@ git clone https://github.com/your-username/figma-reconstruct-component.git
 cd figma-reconstruct-component
 ```
 
-2. **Install dependencies** (if applicable)
+2. **Store your Figma access token**
 
-```bash
-npm install
-```
-
-3. **Configure your Figma access token**
-
-Create a `.component-contracts` file in the root (this is gitignored — never commit it):
+Create a `.component-contracts` file in the root (gitignored — never commit this):
 
 ```
 FIGMA_ACCESS_TOKEN=your_token_here
 ```
 
-You can get a personal access token from **Figma → Account Settings → Personal Access Tokens**.
-
-4. **Add the skill to Claude**
+3. **Add the skill to Claude**
 
 Place the `SKILL.md` file in your Claude skills directory:
 
