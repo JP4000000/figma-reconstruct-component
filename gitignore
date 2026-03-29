@@ -1,0 +1,11 @@
+# Component Contracts config — contains your Figma access token
+.component-contracts
+
+# Generated scripts — disposable build artifacts, never committed
+scripts/
+
+# macOS
+.DS_Store
+
+# Node
+node_modules/
