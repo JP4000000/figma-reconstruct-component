@@ -1,4 +1,4 @@
-# figma-reconstruct-component
+# reconstruct-component-figma
 
 A skill that takes a selected Figma frame and rebuilds it as a proper **Atomic Design component system** — directly on the Figma canvas. Atoms first, then molecules, then the organism. No Code Connect. No published library required.
 
