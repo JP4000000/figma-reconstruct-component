@@ -1,5 +1,5 @@
 ---
-name: figma-reconstruct-component
+name: reconstruct-component-figma
 description: "Use ONLY when the user wants to CREATE new Figma components from a selected frame using Atomic Design — atoms, molecules, organisms built bottom-up directly on the Figma canvas. Do NOT use for code connect, linking to code, mapping components, publishing to a library, or generating code. Do NOT use for full page or screen generation. ONLY use when user says 'make this a component', 'build this as a component', 'turn this frame into a component', 'componentize this', 'build atoms from this', or 'reconstruct this as a component'."
 disable-model-invocation: false
 ---
