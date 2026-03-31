@@ -18,7 +18,7 @@ The user selects a **single Figma frame** and this skill **builds it as a proper
 
 **MANDATORY**: Load [figma-use](../figma-use/SKILL.md) before any `use_figma` call.
 
-**Always pass `skillNames: "figma-reconstruct-component"` when calling `use_figma`.**
+**Always pass `skillNames: "reconstruct-component-figma"` when calling `use_figma`.**
 
 ---
 
